@@ -1,0 +1,91 @@
+<div class="dialog_container">
+  <div class="update_container">
+    <div class="close_btn" (click)="closeDialog()">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+    <form
+      #updateForm="ngForm"
+      (ngSubmit)="updateData(updateForm)"
+      *ngFor="let singleUser of finalProduct"
+    >
+      <h4 class="text-center mb-lg-1">Update Data</h4>
+      <div class="row mb-3">
+        <div class="col-sm-12">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Your Name...."
+            name="id"
+            required
+            #id="ngModel"
+            [(ngModel)]="singleUser.id"
+            [placeholder]="singleUser.id"
+            readonly="readonly"
+          />
+        </div>
+
+        <div class="col-sm-12">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Your Name...."
+            name="name"
+            #updatetName="ngModel"
+            required
+            [(ngModel)]="name"
+            [class.is-invalid]="updatetName.invalid && updatetName.touched"
+            [placeholder]="singleUser.name"
+          />
+
+          <small
+            class="text-danger"
+            [class.d-none]="updatetName.valid || updatetName.untouched"
+            >All fields required*</small
+          >
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-12">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Your Code...."
+            name="code"
+            #updatetCode="ngModel"
+            required
+            [(ngModel)]="code"
+            [class.is-invalid]="updatetCode.invalid && updatetCode.touched"
+            [placeholder]="singleUser.code"
+          />
+          <small
+            class="text-danger"
+            [class.d-none]="updatetCode.valid || updatetCode.untouched"
+            >All fields required*</small
+          >
+        </div>
+      </div>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Your Name...."
+        name="status"
+        required
+        #status="ngModel"
+        [(ngModel)]="singleUser.status"
+        [placeholder]="singleUser.status"
+        readonly="readonly"
+      />
+      <button type="submit" class="btn btn-success">Update</button>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <button
+        mat-button
+        mat-dialog-close
+        (click)="closeDialog()"
+        class="btn btn-danger"
+      >
+        Close
+      </button>
+    </form>
+  </div>
+</div>

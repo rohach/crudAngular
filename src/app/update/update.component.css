@@ -1,0 +1,25 @@
+.dialog_container {
+  position: fixed;
+  top: 50%;
+  left: 37%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  z-index: 1000;
+  width: 250px !important;
+}
+.update_container {
+  display: grid;
+  place-content: center;
+  width: 550px !important;
+  height: 300px !important;
+  background-color: rgb(236, 236, 236);
+  backdrop-filter: blur(100px) !important;
+  /* padding: 10rem 5rem !important; */
+}
+form {
+  padding: 2rem !important;
+}
+.close_btn {
+  margin-left: 120% !important;
+  cursor: pointer;
+}
